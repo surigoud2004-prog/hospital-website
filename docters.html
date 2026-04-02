@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Medical Specialists</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f6f9;
+    }
+
+    header {
+        background-color: #005eb8;
+        color: white;
+        text-align: center;
+        padding: 30px 10px;
+    }
+
+    nav {
+        background: #003f7f;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        padding: 40px 8%;
+    }
+
+    .doctor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .doctor-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .doctor-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .doctor-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .doctor-info {
+        padding: 20px;
+    }
+
+    .doctor-info h3 {
+        margin: 10px 0 5px;
+        color: #005eb8;
+    }
+
+    .doctor-info p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 15px;
+        background: #005eb8;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn:hover {
+        background: #003f7f;
+    }
+
+    footer {
+        background: #003f7f;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 40px;
+    }
+
+    @media(max-width: 768px) {
+        .container {
+            padding: 20px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Meet Our Medical Specialists</h1>
+    <p>Experienced. Qualified. Compassionate.</p>
+</header>
+
+<nav>
+    <a href="/index.html">Home</a>
+    <a href="#cardiology">Cardiology</a>
+    <a href="#neurology">Neurology</a>
+    <a href="#orthopedics">Orthopedics</a>
+    <a href="#pediatrics">Pediatrics</a>
+     <a href="#Gneral Physician">Gneral Physician</a>
+</nav>
+
+<div class="container">
+
+    <div class="doctor-grid">
+
+        <!-- Cardiologist -->
+        <div class="doctor-card" id="cardiology">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="Cardiologist">
+            <div class="doctor-info">
+                <h3>Dr. Michael Carter</h3>
+                <p><strong>Specialty:</strong> Cardiology</p>
+                <p>Expert in heart disease treatment, angioplasty, and preventive cardiac care.</p>
+                <a href="/appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+
+        <!-- Neurologist -->
+        <div class="doctor-card" id="neurology">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d" alt="Neurologist">
+            <div class="doctor-info">
+                <h3>Dr. Sarah Mitchell</h3>
+                <p><strong>Specialty:</strong> Neurology</p>
+                <p>Specialist in stroke management, epilepsy treatment, and neurological disorders.</p>
+                <a href="/appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+
+        <!-- Orthopedic Surgeon -->
+        <div class="doctor-card" id="orthopedics">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54" alt="Orthopedic Doctor">
+            <div class="doctor-info">
+                <h3>Dr. James Robertson</h3>
+                <p><strong>Specialty:</strong> Orthopedics</p>
+                <p>Joint replacement expert and sports injury specialist.</p>
+                <a href="/appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+
+        <!-- Pediatrician -->
+        <div class="doctor-card" id="pediatrics">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" alt="Pediatrician">
+            <div class="doctor-info">
+                <h3>Dr. Emily Johnson</h3>
+                <p><strong>Specialty:</strong> Pediatrics</p>
+                <p>Dedicated to child health, vaccinations, and developmental care.</p>
+                <a href="/appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+
+         <!-- Gneral Physician -->
+        <div class="doctor-card" id="Gneral Physician">
+            <img src="https://lirp.cdn-website.com/69c0b277/dms3rep/multi/opt/Dr.+Snigda+Panuganti+-+Best+general+physician+in+Hyderabad-+lady+md+general+physician+in+hitech+city+kphb-1920w.jpg" alt="Gneral Physician">
+            <div class="doctor-info">
+                <h3>Dr. Snigda Panuganti</h3>
+                <p><strong>Specialty:</strong> Gneral Physician</p>
+                <p>A general physician is a primary care doctor (MBBS + MD) specializing in diagnosing, treating, and managing acute/chronic illnesses without surgery</p>
+                <a href="/appointment.html" class="btn">Book Appointment</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+    <p>© 2026 Multicare Hospital. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

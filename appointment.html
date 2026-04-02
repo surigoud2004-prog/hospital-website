@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+ </head>
+ <body>
+   
+    <style> 
+        body { font-family: Arial, sans-serif; }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .footer {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin: bottom 2px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Multicare Hospital</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/services.html" target="_blank">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="/docters.html" target="_blank">Doctors</a></li>
+        <li class="nav-item"><a class="nav-link" href="/appointment.html" target="_blank">Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+  </nav><section class="hero" id="home">
+    <div class="container">
+        <h1>Welcome to Multicare Hospital</h1>
+        <p>Your Health, Our Priority</p>
+        <a href="/index.html" class="btn btn-light btn-lg">Home</a>
+    </div>
+   </section><section class="section-padding bg-light" id="appointment">
+    <div class="container">
+        <h2 class="text-center">Book an Appointment</h2>
+        <form class="row g-3 mt-4" onsubmit="saveAppointment(event)">
+            <div class="col-md-6">
+                <input type="text" id="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="col-md-6">
+                <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="col-md-6">
+                <input type="date" id="date" class="form-control" placeholder="DD-MM-YYYY" pattern="\\d{2}-\\d{2}-\\d{4}" required>
+            </div>
+            <div class="col-md-6">
+                <select id="doctor" class="form-select" required>
+                    <option selected disabled>Select Doctor</option>
+                    <option>Dr. Michael Carter</option>
+                    <option>Dr. Sarah Mitchell</option>
+                    <option>Dr. James Robertson</option>
+                    <option >Dr. Emily Johnson</option>
+                    <option >Dr. Snigda Panuganti</option>
+                    
+                </select>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+    <p>© 2026 Multicare Hospital. All Rights Reserved.</p>
+</footer>
+    <script>
+          function saveAppointment(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const date = document.getElementById('date').value;
+    const doctor = document.getElementById('doctor').value;
+
+    const appointment = { name, phone, date, doctor };
+    let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    appointments.push(appointment);
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+
+    alert('Appointment Booked Successfully!');
+    event.target.reset();
+}
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
