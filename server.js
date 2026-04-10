@@ -1,10 +1,12 @@
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 const app = express();
 
-app.use(cors()); // Allows your HTML file to connect
-app.use(express.json());
-
+app.use(path()); // Allows your HTML file to connect
+app.use(express.static(path.join(__dirname,'dist')));
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'dist','index.html'))
+})
 const ADMIN_PASSWORD = "admin123"; // This is now hidden from the user
 
 app.post('/login', (req, res) => {
@@ -19,6 +21,6 @@ app.post('/login', (req, res) => {
 // At the bottom of server.js
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT,'0.0.0.0',() => {
+app.listen(PORT,() => {
     console.log(`Server is running on port ${PORT}`);
 });
