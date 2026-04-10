@@ -17,7 +17,7 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/:path*',(req,res)=>{
+app.get('/:path([\\s\\S]*)',(req,res)=>{
     res.sendFile(path.join(__dirname,'dist','index.html'))
 })
 // At the bottom of server.js
