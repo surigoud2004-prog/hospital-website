@@ -3,10 +3,9 @@ const path = require('path');
 const app = express();
 
 // Allows your HTML file to connect
+app.use(express.json());
 app.use(express.static(path.join(__dirname,'dist')));
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'dist','index.html'))
-})
+
 const ADMIN_PASSWORD = "admin123"; // This is now hidden from the user
 
 app.post('/login', (req, res) => {
@@ -18,6 +17,9 @@ app.post('/login', (req, res) => {
     }
 });
 
+app.get('(.*)',(req,res)=>{
+    res.sendFile(path.join(__dirname,'dist','index.html'))
+})
 // At the bottom of server.js
 const PORT = process.env.PORT || 3000;
 
