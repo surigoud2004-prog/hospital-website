@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(path()); // Allows your HTML file to connect
+// Allows your HTML file to connect
 app.use(express.static(path.join(__dirname,'dist')));
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,'dist','index.html'))
