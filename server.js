@@ -17,9 +17,9 @@ app.post('/login', (req, res) => {
     }
 });
 
-app.get('/:pathMatch(.*)*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'dist','index.html'))
-})
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 // At the bottom of server.js
 const PORT = process.env.PORT || 3000;
 
